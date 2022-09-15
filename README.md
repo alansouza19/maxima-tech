@@ -1,4 +1,4 @@
-# SpringSecurity
+# Aplicação Web Java com Spring Framework
 
 Esse projeto fez parte de um processo seletivo o qual participei cujo o objetivo:
 
