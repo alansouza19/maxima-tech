@@ -1,4 +1,4 @@
-package tech.solutio.teste;
+package maxima.tech;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
