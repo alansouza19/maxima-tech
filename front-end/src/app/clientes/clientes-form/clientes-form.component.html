@@ -1,0 +1,23 @@
+
+<div>
+  <h2>{{title}}</h2>
+
+</div>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group" >
+            <label>Código</label>
+            <input placeholder="Código" class="form-control" type="text" name="codigo" [(ngModel)]="clientes.codigo" />
+            <label>Nome</label>
+            <input placeholder="Nome" class="form-control" type="text" name="nome" [(ngModel)]="clientes.nome" [required]="true" />
+            <label>CNPJ</label>
+            <input placeholder="00.000.000/0000-00" class="form-control" type="text" name="cnpj" [(ngModel)]="clientes.cnpj" maxlength="18" [required]="true" />
+            <label>Endereço</label>
+            <input placeholder="Endereço" class="form-control" type="text" name="endereco" [(ngModel)]="clientes.endereco" [required]="true" />
+          </div>
+
+        <button *ngIf="!clientes?.id" type="submit" class="btn btn-primary mr-2">Cadastrar</button>
+        <button *ngIf="clientes?.id" type="submit" class="btn btn-primary mr-2">Salvar alterações</button>
+        <button type="button" class="btn btn-secondary" [routerLink]="['/lista-clientes']">Cancelar</button>
+    </form>
+
