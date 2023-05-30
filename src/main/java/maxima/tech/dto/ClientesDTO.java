@@ -3,7 +3,7 @@ package maxima.tech.dto;
 import jakarta.validation.constraints.NotNull;
 
 public class ClientesDTO {
-    @NotNull
+
     private String codigo;
     @NotNull
     private String nome;
