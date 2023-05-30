@@ -15,6 +15,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping(value = "/api/clientes")
 public class ClientesController {
 
@@ -22,7 +23,7 @@ public class ClientesController {
     ClientesService clientesService;
 
     @PostMapping("/cadastro")
-    public ResponseEntity<Object> cadastrarClientes(@RequestBody @Valid ClientesDTO clientesDTO){
+    public ResponseEntity<Object> cadastrarClientes(@RequestBody @Valid ClientesDTO clientesDTO) throws Exception {
         ClientesModel clientesModel = new ClientesModel();
         BeanUtils.copyProperties(clientesDTO, clientesModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(clientesService.cadastrar(clientesModel));
@@ -49,12 +50,12 @@ public class ClientesController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não encontrado");
         }
         clientesService.delete(clientesModelOptional.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Cliente deletado com sucesso");
+        return ResponseEntity.status(HttpStatus.OK).body(clientesModelOptional);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> atualizarClientes(@PathVariable(value = "id") UUID id,
-                                                    @RequestBody @Valid ClientesDTO clientesDTO){
+                                                    @RequestBody @Valid ClientesDTO clientesDTO) throws Exception {
         Optional<ClientesModel> clientesModelOptional = clientesService.findById(id);
         if (!clientesModelOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não encontrado");

@@ -14,7 +14,7 @@ public class ClientesModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(nullable = false)
+    @Column
     private String codigo;
     @Column(nullable = false)
     private String nome;
