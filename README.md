@@ -45,3 +45,10 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
   <h4>ng serve</h4>
 
 Após seguir as etapas acima, o projeto estará em execução. Abra um navegador e acesse http://localhost:4200 para visualizar e interagir com o cadastro de clientes.
+
+<h2>Rodar back-end via docker</h2>
+  Na pasta do projeto:
+  
+   - Passo 1: mvn clean install 
+   - Passo 2 : docker build -t maxima-tech:1.0 .
+   - Passo 3:  docker run -p 8080:8080 --network=host --name maxima-tech maxima-tech:1.0
