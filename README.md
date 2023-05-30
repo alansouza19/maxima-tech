@@ -21,7 +21,7 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
 
 - Java 17
 - NodeJS 18.14
-- PostgreSQL
+- PostgreSQL 15.3
 
 <h3>Configuração do Banco de Dados</h3>
 
